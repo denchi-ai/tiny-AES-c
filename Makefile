@@ -6,7 +6,7 @@ LD           = gcc
 AR           = ar
 ARFLAGS      = rcs
 CFLAGS       = -Wall -Os -c
-LDFLAGS      = -Wall -Os -Wl,-Map,test.map
+LDFLAGS      = -Wall -Os -Wl
 ifdef AES192
 CFLAGS += -DAES192=1
 endif

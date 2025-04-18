@@ -8,7 +8,7 @@
 #define CTR 1
 #define ECB 1
 
-#include "aes.h"
+#include "./aes/aes.h"
 
 
 static void phex(uint8_t* str);

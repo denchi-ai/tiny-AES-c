@@ -20,7 +20,7 @@ OBJCOPY      = objcopy
 # include path to AVR library
 INCLUDE_PATH = /usr/lib/avr/include
 # splint static check
-SPLINT       = splint test.c aes.c -I$(INCLUDE_PATH) +charindex -unrecog
+SPLINT       = splint test.c ./aes/aes.c -I$(INCLUDE_PATH) +charindex -unrecog
 
 default: test.elf
 
@@ -31,11 +31,11 @@ test.hex : test.elf
 	echo copy object-code to new image and format in hex
 	$(OBJCOPY) ${OBJCOPYFLAGS} $< $@
 
-test.o : test.c aes.h aes.o
+test.o : test.c ./aes/aes.h aes.o
 	echo [CC] $@ $(CFLAGS)
 	$(CC) $(CFLAGS) -o  $@ $<
 
-aes.o : aes.c aes.h
+aes.o : ./aes/aes.c ./aes/aes.h
 	echo [CC] $@ $(CFLAGS)
 	$(CC) $(CFLAGS) -o $@ $<
 

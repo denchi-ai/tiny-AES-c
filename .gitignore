@@ -3,4 +3,5 @@
 /test.map
 test_package/build
 CMakeFiles/
+.vscode/
 
